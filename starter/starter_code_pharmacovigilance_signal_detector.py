@@ -207,17 +207,23 @@ OUTPUT FORMAT (Markdown headings, concise, professional):
 
 
 STATISTICAL_TOOLS = {
-    "calculate_stats": None,   # TODO: pharma_tools.calculate_drug_event_statistics
-    "validate_stats": None,    # TODO: pharma_tools.validate_statistical_results
+    # FAERS (openFDA) 2x2 table -> ROR + 95% CI, PRR, chi-square, signal detection
+    "calculate_stats": pharma_tools.calculate_drug_event_statistics,
+    # Sanity checks on the stats JSON (table sums, CI bounds, p-value, signal logic)
+    "validate_stats": pharma_tools.validate_statistical_results,
 }
 
 CLINICAL_TOOLS = {
-    "search_literature": None,     # TODO: pharma_tools.search_clinical_literature
-    "assess_plausibility": None,   # TODO: pharma_tools.assess_biological_plausibility
+    # PubMed literature search -> publication count + evidence strength
+    "search_literature": pharma_tools.search_clinical_literature,
+    # Mechanism / pathway lookup -> PLAUSIBLE / IMPLAUSIBLE / UNCERTAIN
+    "assess_plausibility": pharma_tools.assess_biological_plausibility,
 }
 
-REGULATORY_TOOL = None   # TODO: pharma_tools.generate_regulatory_report
-QC_TOOL = None           # TODO: pharma_tools.quality_review_analysis
+# Structured regulatory report (risk level, actions) from stats + clinical JSON
+REGULATORY_TOOL = pharma_tools.generate_regulatory_report
+# Multi-dimensional QC scoring, issues and responsible-agent routing
+QC_TOOL = pharma_tools.quality_review_analysis
 
 
 # =============================================================================
