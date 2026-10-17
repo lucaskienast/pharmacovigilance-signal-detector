@@ -1,0 +1,369 @@
+{
+  "drug_name": "MONTELUKAST",
+  "adverse_event": "AGGRESSION",
+  "timestamp": "2026-10-17T18:27:58.117809",
+  "literature_evidence": {
+    "source": "pubmed",
+    "available": true,
+    "query": "MONTELUKAST[Title/Abstract] AND AGGRESSION[Title/Abstract]",
+    "n_articles": 8,
+    "latest_year": 2026,
+    "earliest_year": 2008,
+    "year_range": "2008-2026",
+    "mesh_terms_sample": [
+      "Acetates",
+      "Adolescent",
+      "Adult",
+      "Adverse Drug Reaction Reporting Systems",
+      "Aged",
+      "Animals",
+      "Anti-Inflammatory Agents",
+      "Antidepressive Agents",
+      "Asthma",
+      "Child",
+      "Child, Preschool",
+      "Chronic Disease",
+      "Churg-Strauss Syndrome",
+      "Cyclopropanes",
+      "Databases, Factual",
+      "Depression",
+      "Dimethyl Sulfoxide",
+      "Dreams",
+      "Drug-Related Side Effects and Adverse Reactions",
+      "Female"
+    ],
+    "evidence_strength": "moderate",
+    "sample_articles": [
+      {
+        "pmid": "42745939",
+        "title": "Comparative analysis of adverse drug reaction reports for leukotriene receptor antagonists mainly indicated for allergic rhinitis and asthma: a WHO VigiAccess study.",
+        "year": 2026,
+        "journal": "Frontiers in medicine",
+        "doi": "10.3389/fmed.2026.1820058",
+        "authors": [
+          "Youlin Dong",
+          "Zhigang Xia",
+          "Weimin Gao"
+        ]
+      },
+      {
+        "pmid": "42327902",
+        "title": "Risk of drug-related aggression in pediatric populations: a pharmacovigilance analysis using the FAERS database.",
+        "year": 2026,
+        "journal": "Frontiers in pediatrics",
+        "doi": "10.3389/fped.2026.1803086",
+        "authors": [
+          "Jing Chen",
+          "Lilan Zhao"
+        ]
+      },
+      {
+        "pmid": "38094668",
+        "title": "The Impact of Montelukast's Black Box Warning on Pediatric Mental Health Adverse Event Reports.",
+        "year": 2023,
+        "journal": "The journal of pediatric pharmacology and therapeutics : JPPT : the official journal of PPAG",
+        "doi": "10.5863/1551-6776-28.8.704",
+        "authors": [
+          "Samer Abdelkader",
+          "Amy Dawn Hendrix-Dicken",
+          "Michelle Condren"
+        ]
+      },
+      {
+        "pmid": "36148246",
+        "title": "Montelukast induces beneficial behavioral outcomes and reduces inflammation in male and female rats.",
+        "year": 2022,
+        "journal": "Frontiers in immunology",
+        "doi": "10.3389/fimmu.2022.981440",
+        "authors": [
+          "Ira S Rostevanov",
+          "Batya Betesh-Abay",
+          "Ahmad Nassar"
+        ]
+      },
+      {
+        "pmid": "34712847",
+        "title": "Adverse drug reactions of leukotriene receptor antagonists in children with asthma: a systematic review.",
+        "year": 2021,
+        "journal": "BMJ paediatrics open",
+        "doi": "10.1136/bmjpo-2021-001206",
+        "authors": [
+          "Eleanor Grace Dixon",
+          "Charlotte Em Rugg-Gunn",
+          "Vanessa Sellick"
+        ]
+      }
+    ]
+  },
+  "statistical_analysis": {
+    "agent_response": "## Statistical Signal Assessment\nData source: openFDA_live_API  \nCase count (drug_event): 1258\n\n## Key Statistics (tool-derived)\n- ROR: 6.298 (95% CI 5.952\u20136.663; openFDA)\n- PRR: 6.088\n- Chi-square: 5379.257\n- p-value: 0.0 (below the tool's rounding precision)\n- Chi-square test valid: true\n\n## Signal Decision (EMA criteria)\n- Case count >= 3: MET (tool value: 1258)\n- ROR >= 2: MET (tool value: 6.298)\n- Lower 95% CI bound > 1: MET (tool value: 5.952)\n- p < 0.05 (chi-square valid): MET (tool value: 0.0)\n\nSIGNAL DETECTED, confirming it matches the tool's signal_detection.signal_detected field.\n\n## Validation & Data Quality\nValidation status: PASSED  \nChecks performed: \n- contingency_table_sum: PASSED\n- ror_bounds: PASSED\n- ci_bounds: PASSED\n- p_value_bounds: PASSED\n- signal_logic: PASSED  \nNo issues were found, and the statistical calculations are valid.\n\n## Limitations\nData quality flags: None present, indicating adequate quality.  \nInherent limitations of FAERS data include under-reporting, stimulated/notoriety reporting, duplicate reports, confounding by indication, and no exposure denominator (disproportionality is not incidence or risk).",
+    "tool_usage": [
+      "calculate_drug_event_statistics",
+      "validate_statistical_results"
+    ],
+    "raw_data": "{\n  \"drug_name\": \"MONTELUKAST\",\n  \"adverse_event\": \"AGGRESSION\",\n  \"data_source\": \"openFDA_live_API\",\n  \"contingency_table\": {\n    \"drug_event\": 1258,\n    \"drug_no_event\": 85126,\n    \"no_drug_event\": 48242,\n    \"no_drug_no_event\": 20558064,\n    \"total\": 20692690,\n    \"total_drug_reports\": 86384,\n    \"total_event_reports\": 49500\n  },\n  \"statistics\": {\n    \"ror\": 6.298,\n    \"ror_95ci_lower\": 5.952,\n    \"ror_95ci_upper\": 6.663,\n    \"prr\": 6.088,\n    \"chi_square\": 5379.257,\n    \"p_value\": 0.0,\n    \"chi2_test_valid\": true\n  },\n  \"signal_detection\": {\n    \"signal_detected\": true,\n    \"criteria_met\": {\n      \"minimum_cases\": true,\n      \"ror_threshold\": true,\n      \"statistical_significance\": true\n    },\n    \"interpretation\": \"Signal DETECTED based on EMA criteria\"\n  },\n  \"data_quality\": {\n    \"flags\": [],\n    \"quality_assessment\": \"adequate\",\n    \"notes\": \"Chi-square test performed successfully\"\n  }\n}",
+    "validation": {
+      "validation_status": "PASSED",
+      "checks_performed": [
+        "contingency_table_sum: PASSED",
+        "ror_bounds: PASSED",
+        "ci_bounds: PASSED",
+        "p_value_bounds: PASSED",
+        "signal_logic: PASSED"
+      ],
+      "issues": [],
+      "recommendation": "Statistical calculations are valid"
+    },
+    "statistics_summary": {
+      "signal_detected": true,
+      "case_count": 1258,
+      "ror": 6.298,
+      "ror_95ci": [
+        5.952,
+        6.663
+      ],
+      "prr": 6.088,
+      "p_value": 0.0,
+      "chi2_test_valid": true,
+      "data_quality_flags": [],
+      "data_source": "openFDA_live_API"
+    },
+    "ema_criteria_check": [
+      {
+        "criterion": "case count >= 3",
+        "tool_value": 1258,
+        "met": true
+      },
+      {
+        "criterion": "ROR >= 2",
+        "tool_value": 6.298,
+        "met": true
+      },
+      {
+        "criterion": "lower 95% CI bound > 1",
+        "tool_value": 5.952,
+        "met": true
+      },
+      {
+        "criterion": "p < 0.05 (chi-square valid)",
+        "tool_value": 0.0,
+        "met": true
+      }
+    ],
+    "data_access_warnings": [],
+    "numeric_grounding": {
+      "numbers_checked": 17,
+      "ungrounded_numbers": [],
+      "grounded": true
+    },
+    "llm_error": null,
+    "status": "completed",
+    "revision_number": 0,
+    "feedback_addressed": null
+  },
+  "clinical_assessment": {
+    "agent_response": "## Clinical Assessment Summary\nThe statistical signal for aggression associated with montelukast is strong, with a significant number of cases reported. However, the biological plausibility of this association remains uncertain due to a lack of established mechanisms. The literature provides moderate evidence, but further research is needed to clarify the relationship and explore potential mechanisms.\n\n## Literature Evidence (PubMed)\nThe literature search returned a total of 8 publications related to montelukast and aggression, indicating a moderate level of evidence. The year range of these publications spans from 2008 to 2026. Sample publications include:\n- PMID 42745939: \"Comparative analysis of adverse drug reaction reports for leukotriene receptor antagonists mainly indicated for allergic rhinitis and asthma: a WHO VigiAccess study.\" (2026)\n- PMID 42327902: \"Risk of drug-related aggression in pediatric populations: a pharmacovigilance analysis using the FAERS database.\" (2026)\n- PMID 38094668: \"The Impact of Montelukast's Black Box Warning on Pediatric Mental Health Adverse Event Reports.\" (2023)\n\n## Biological Plausibility & Mechanism\nThe proposed mechanism for aggression related to montelukast is currently unknown, with a confidence level rated as low. There is no established mechanistic pathway documented in the reference database. The lack of mechanistic understanding contributes to the uncertainty surrounding the biological plausibility of this adverse event. Potential hypotheses could include neurochemical alterations due to leukotriene receptor antagonism, but these remain speculative without direct evidence.\n\n## Causality & Confounding\nWhile the statistical signal indicates a strong association between montelukast and aggression, causality cannot be firmly established from the available data. Key Bradford Hill considerations such as strength and consistency of the association are supported by the literature, but criteria like temporality and dose-response are not assessable from the FAERS data. Potential confounders include underlying conditions for which montelukast is prescribed (confounding by indication), as well as co-medications and comorbidities that may influence behavioral outcomes. The possibility of stimulated reporting following safety communications also warrants consideration.\n\n## Classification: UNCERTAIN\nThe overall assessment of biological plausibility is classified as UNCERTAIN due to the lack of established mechanisms and limited mechanistic data. Further research, including pharmacoepidemiological studies and mechanistic investigations, is necessary to clarify the relationship between montelukast and aggression.\n\n## Clinical Importance\nAggression as an adverse event is clinically significant, particularly in pediatric populations who are often prescribed montelukast for asthma and allergic conditions. The potential impact on mental health and behavior in these vulnerable groups warrants careful monitoring and further investigation.\n\n## Response to QC Feedback\n1. **Issue Raised**: Signal uncertainty due to lack of established mechanism.\n   - **What I Changed**: Proposed potential mechanistic hypotheses, including neurochemical alterations due to leukotriene receptor antagonism, while clearly stating that these remain speculative. Documented the need for further research to clarify the mechanism.",
+    "tool_usage": [
+      "search_clinical_literature",
+      "assess_biological_plausibility"
+    ],
+    "raw_data": {
+      "literature_json": "{\n  \"drug_name\": \"MONTELUKAST\",\n  \"adverse_event\": \"AGGRESSION\",\n  \"literature_found\": true,\n  \"source\": \"pubmed\",\n  \"evidence_summary\": {\n    \"evidence_strength\": \"moderate\",\n    \"publication_count\": 8,\n    \"year_range\": \"2008-2026\",\n    \"latest_publication_year\": 2026,\n    \"clinical_relevance\": \"High\"\n  },\n  \"mesh_terms\": [\n    \"Acetates\",\n    \"Adolescent\",\n    \"Adult\",\n    \"Adverse Drug Reaction Reporting Systems\",\n    \"Aged\",\n    \"Animals\",\n    \"Anti-Inflammatory Agents\",\n    \"Antidepressive Agents\",\n    \"Asthma\",\n    \"Child\",\n    \"Child, Preschool\",\n    \"Chronic Disease\",\n    \"Churg-Strauss Syndrome\",\n    \"Cyclopropanes\",\n    \"Databases, Factual\",\n    \"Depression\",\n    \"Dimethyl Sulfoxide\",\n    \"Dreams\",\n    \"Drug-Related Side Effects and Adverse Reactions\",\n    \"Female\"\n  ],\n  \"sample_publications\": [\n    {\n      \"pmid\": \"42745939\",\n      \"title\": \"Comparative analysis of adverse drug reaction reports for leukotriene receptor antagonists mainly indicated for allergic rhinitis and asthma: a WHO VigiAccess study.\",\n      \"year\": 2026,\n      \"journal\": \"Frontiers in medicine\",\n      \"doi\": \"10.3389/fmed.2026.1820058\",\n      \"authors\": [\n        \"Youlin Dong\",\n        \"Zhigang Xia\",\n        \"Weimin Gao\"\n      ]\n    },\n    {\n      \"pmid\": \"42327902\",\n      \"title\": \"Risk of drug-related aggression in pediatric populations: a pharmacovigilance analysis using the FAERS database.\",\n      \"year\": 2026,\n      \"journal\": \"Frontiers in pediatrics\",\n      \"doi\": \"10.3389/fped.2026.1803086\",\n      \"authors\": [\n        \"Jing Chen\",\n        \"Lilan Zhao\"\n      ]\n    },\n    {\n      \"pmid\": \"38094668\",\n      \"title\": \"The Impact of Montelukast's Black Box Warning on Pediatric Mental Health Adverse Event Reports.\",\n      \"year\": 2023,\n      \"journal\": \"The journal of pediatric pharmacology and therapeutics : JPPT : the official journal of PPAG\",\n      \"doi\": \"10.5863/1551-6776-28.8.704\",\n      \"authors\": [\n        \"Samer Abdelkader\",\n        \"Amy Dawn Hendrix-Dicken\",\n        \"Michelle Condren\"\n      ]\n    },\n    {\n      \"pmid\": \"36148246\",\n      \"title\": \"Montelukast induces beneficial behavioral outcomes and reduces inflammation in male and female rats.\",\n      \"year\": 2022,\n      \"journal\": \"Frontiers in immunology\",\n      \"doi\": \"10.3389/fimmu.2022.981440\",\n      \"authors\": [\n        \"Ira S Rostevanov\",\n        \"Batya Betesh-Abay\",\n        \"Ahmad Nassar\"\n      ]\n    },\n    {\n      \"pmid\": \"34712847\",\n      \"title\": \"Adverse drug reactions of leukotriene receptor antagonists in children with asthma: a systematic review.\",\n      \"year\": 2021,\n      \"journal\": \"BMJ paediatrics open\",\n      \"doi\": \"10.1136/bmjpo-2021-001206\",\n      \"authors\": [\n        \"Eleanor Grace Dixon\",\n        \"Charlotte Em Rugg-Gunn\",\n        \"Vanessa Sellick\"\n      ]\n    }\n  ],\n  \"search_query\": \"MONTELUKAST[Title/Abstract] AND AGGRESSION[Title/Abstract]\",\n  \"data_availability\": {\n    \"pubmed_available\": true,\n    \"reason\": null\n  }\n}",
+      "plausibility_json": "{\n  \"drug_name\": \"MONTELUKAST\",\n  \"adverse_event\": \"AGGRESSION\",\n  \"mechanism_assessment\": {\n    \"biologically_plausible\": null,\n    \"proposed_mechanism\": \"No established mechanism in reference database\",\n    \"mechanistic_pathway\": \"Unknown\",\n    \"confidence_level\": \"low\"\n  },\n  \"literature_support\": \"moderate\",\n  \"overall_assessment\": \"UNCERTAIN\",\n  \"notes\": \"Limited mechanistic data available - requires expert review\"\n}",
+      "combined_for_qc": "{\"drug_name\": \"MONTELUKAST\", \"adverse_event\": \"AGGRESSION\", \"literature_found\": true, \"source\": \"pubmed\", \"evidence_summary\": {\"evidence_strength\": \"moderate\", \"publication_count\": 8, \"year_range\": \"2008-2026\", \"latest_publication_year\": 2026, \"clinical_relevance\": \"High\"}, \"mesh_terms\": [\"Acetates\", \"Adolescent\", \"Adult\", \"Adverse Drug Reaction Reporting Systems\", \"Aged\", \"Animals\", \"Anti-Inflammatory Agents\", \"Antidepressive Agents\", \"Asthma\", \"Child\", \"Child, Preschool\", \"Chronic Disease\", \"Churg-Strauss Syndrome\", \"Cyclopropanes\", \"Databases, Factual\", \"Depression\", \"Dimethyl Sulfoxide\", \"Dreams\", \"Drug-Related Side Effects and Adverse Reactions\", \"Female\"], \"sample_publications\": [{\"pmid\": \"42745939\", \"title\": \"Comparative analysis of adverse drug reaction reports for leukotriene receptor antagonists mainly indicated for allergic rhinitis and asthma: a WHO VigiAccess study.\", \"year\": 2026, \"journal\": \"Frontiers in medicine\", \"doi\": \"10.3389/fmed.2026.1820058\", \"authors\": [\"Youlin Dong\", \"Zhigang Xia\", \"Weimin Gao\"]}, {\"pmid\": \"42327902\", \"title\": \"Risk of drug-related aggression in pediatric populations: a pharmacovigilance analysis using the FAERS database.\", \"year\": 2026, \"journal\": \"Frontiers in pediatrics\", \"doi\": \"10.3389/fped.2026.1803086\", \"authors\": [\"Jing Chen\", \"Lilan Zhao\"]}, {\"pmid\": \"38094668\", \"title\": \"The Impact of Montelukast's Black Box Warning on Pediatric Mental Health Adverse Event Reports.\", \"year\": 2023, \"journal\": \"The journal of pediatric pharmacology and therapeutics : JPPT : the official journal of PPAG\", \"doi\": \"10.5863/1551-6776-28.8.704\", \"authors\": [\"Samer Abdelkader\", \"Amy Dawn Hendrix-Dicken\", \"Michelle Condren\"]}, {\"pmid\": \"36148246\", \"title\": \"Montelukast induces beneficial behavioral outcomes and reduces inflammation in male and female rats.\", \"year\": 2022, \"journal\": \"Frontiers in immunology\", \"doi\": \"10.3389/fimmu.2022.981440\", \"authors\": [\"Ira S Rostevanov\", \"Batya Betesh-Abay\", \"Ahmad Nassar\"]}, {\"pmid\": \"34712847\", \"title\": \"Adverse drug reactions of leukotriene receptor antagonists in children with asthma: a systematic review.\", \"year\": 2021, \"journal\": \"BMJ paediatrics open\", \"doi\": \"10.1136/bmjpo-2021-001206\", \"authors\": [\"Eleanor Grace Dixon\", \"Charlotte Em Rugg-Gunn\", \"Vanessa Sellick\"]}], \"search_query\": \"MONTELUKAST[Title/Abstract] AND AGGRESSION[Title/Abstract]\", \"data_availability\": {\"pubmed_available\": true, \"reason\": null}, \"mechanism_assessment\": {\"biologically_plausible\": null, \"proposed_mechanism\": \"No established mechanism in reference database\", \"mechanistic_pathway\": \"Unknown\", \"confidence_level\": \"low\"}, \"literature_support\": \"moderate\", \"overall_assessment\": \"UNCERTAIN\", \"notes\": \"Limited mechanistic data available - requires expert review\", \"narrative_response\": \"## Clinical Assessment Summary\\nThe statistical signal for aggression associated with montelukast is strong, with a significant number of cases reported. However, the biological plausibility of this association remains uncertain due to a lack of established mechanisms. The literature provides moderate evidence, but further research is needed to clarify the relationship and explore potential mechanisms.\\n\\n## Literature Evidence (PubMed)\\nThe literature search returned a total of 8 publications related to montelukast and aggression, indicating a moderate level of evidence. The year range of these publications spans from 2008 to 2026. Sample publications include:\\n- PMID 42745939: \\\"Comparative analysis of adverse drug reaction reports for leukotriene receptor antagonists mainly indicated for allergic rhinitis and asthma: a WHO VigiAccess study.\\\" (2026)\\n- PMID 42327902: \\\"Risk of drug-related aggression in pediatric populations: a pharmacovigilance analysis using the FAERS database.\\\" (2026)\\n- PMID 38094668: \\\"The Impact of Montelukast's Black Box Warning on Pediatric Mental Health Adverse Event Reports.\\\" (2023)\\n\\n## Biological Plausibility & Mechanism\\nThe proposed mechanism for aggression related to montelukast is currently unknown, with a confidence level rated as low. There is no established mechanistic pathway documented in the reference database. The lack of mechanistic understanding contributes to the uncertainty surrounding the biological plausibility of this adverse event. Potential hypotheses could include neurochemical alterations due to leukotriene receptor antagonism, but these remain speculative without direct evidence.\\n\\n## Causality & Confounding\\nWhile the statistical signal indicates a strong association between montelukast and aggression, causality cannot be firmly established from the available data. Key Bradford Hill considerations such as strength and consistency of the association are supported by the literature, but criteria like temporality and dose-response are not assessable from the FAERS data. Potential confounders include underlying conditions for which montelukast is prescribed (confounding by indication), as well as co-medications and comorbidities that may influence behavioral outcomes. The possibility of stimulated reporting following safety communications also warrants consideration.\\n\\n## Classification: UNCERTAIN\\nThe overall assessment of biological plausibility is classified as UNCERTAIN due to the lack of established mechanisms and limited mechanistic data. Further research, including pharmacoepidemiological studies and mechanistic investigations, is necessary to clarify the relationship between montelukast and aggression.\\n\\n## Clinical Importance\\nAggression as an adverse event is clinically significant, particularly in pediatric populations who are often prescribed montelukast for asthma and allergic conditions. The potential impact on mental health and behavior in these vulnerable groups warrants careful monitoring and further investigation.\\n\\n## Response to QC Feedback\\n1. **Issue Raised**: Signal uncertainty due to lack of established mechanism.\\n   - **What I Changed**: Proposed potential mechanistic hypotheses, including neurochemical alterations due to leukotriene receptor antagonism, while clearly stating that these remain speculative. Documented the need for further research to clarify the mechanism.\", \"_revision_number\": 1}"
+    },
+    "classification": "UNCERTAIN",
+    "tool_assessment": "UNCERTAIN",
+    "classification_consistent_with_tool": true,
+    "evidence_check": {
+      "publication_count": 8,
+      "shared_pubmed_articles": 8,
+      "search_evidence_strength": "moderate",
+      "shared_evidence_strength": "moderate",
+      "tool_evidence_strength": "moderate",
+      "overclaimed_strengths": []
+    },
+    "llm_error": null,
+    "status": "revised",
+    "revision_number": 1,
+    "feedback_addressed": "QC identified 1 issue(s) for the clinical agent:\n1. [HIGH] signal_uncertain_mechanism: Statistical signal detected but biological plausibility is UNCERTAIN \u2013 requires mechanistic investigation and clear documentation of uncertainty.\n   Required action: Investigate potential mechanisms. Either: (1) Propose a plausible mechanistic pathway with literature support, (2) Identify confounders that could explain a spurious signal, (3) Clearly document why the mechanism remains uncertain and what further research is needed.\n   Evidence needed: mechanism_hypothesis, literature_review, confounder_analysis"
+  },
+  "regulatory_report": {
+    "agent_response": "{\n  \"report_header\": {\n    \"report_type\": \"Pharmacovigilance Signal Assessment\",\n    \"report_version\": \"2.0\",\n    \"drug_name\": \"MONTELUKAST\",\n    \"adverse_event\": \"AGGRESSION\",\n    \"assessment_date\": \"2024-Q4\",\n    \"regulatory_framework\": \"FDA/ICH E2B(R3)\"\n  },\n  \"executive_summary\": {\n    \"signal_status\": \"DETECTED\",\n    \"risk_level\": \"MODERATE\",\n    \"evidence_strength\": \"moderate\",\n    \"recommendation\": \"Further investigation required\"\n  },\n  \"statistical_findings\": {\n    \"reporting_odds_ratio\": 6.298,\n    \"ror_95_ci\": \"(5.952-6.663)\",\n    \"prr\": 6.088,\n    \"case_count\": 1258,\n    \"signal_detection_criteria\": \"EMA Guidelines (n\\u22653, ROR\\u22652, LCI>1)\",\n    \"statistical_significance\": 0.0,\n    \"data_quality\": \"adequate\"\n  },\n  \"clinical_evaluation\": {\n    \"biological_plausibility\": \"UNCLEAR\",\n    \"proposed_mechanism\": \"No established mechanism in reference database\",\n    \"evidence_strength\": \"moderate\",\n    \"clinical_relevance\": \"HIGH\"\n  },\n  \"literature_summary\": {\n    \"pubmed_articles_found\": 8,\n    \"publication_year_range\": \"2008-2026\",\n    \"key_mesh_terms\": [\n      \"Acetates\",\n      \"Adolescent\",\n      \"Adult\",\n      \"Adverse Drug Reaction Reporting Systems\",\n      \"Aged\"\n    ],\n    \"data_source\": \"pubmed\"\n  },\n  \"regulatory_actions\": {\n    \"immediate_actions\": [\n      \"Enhanced surveillance\"\n    ],\n    \"monitoring_requirements\": [\n      \"Periodic safety reports\",\n      \"Signal tracking\"\n    ],\n    \"communication_plan\": \"Standard reporting\",\n    \"rems_consideration\": false\n  },\n  \"quality_assurance\": {\n    \"feedback_loop_iterations\": 2,\n    \"final_quality_score\": 97.0,\n    \"review_status\": true\n  },\n  \"conclusion\": \"Based on statistical analysis (ROR=6.298) and clinical review, this drug-event association requires immediate attention and further investigation. Risk level assessed as MODERATE.\"\n}",
+    "tool_usage": [
+      "generate_regulatory_report"
+    ],
+    "raw_data": "{\n  \"report_header\": {\n    \"report_type\": \"Pharmacovigilance Signal Assessment\",\n    \"report_version\": \"2.0\",\n    \"drug_name\": \"MONTELUKAST\",\n    \"adverse_event\": \"AGGRESSION\",\n    \"assessment_date\": \"2024-Q4\",\n    \"regulatory_framework\": \"FDA/ICH E2B(R3)\"\n  },\n  \"executive_summary\": {\n    \"signal_status\": \"DETECTED\",\n    \"risk_level\": \"MODERATE\",\n    \"evidence_strength\": \"moderate\",\n    \"recommendation\": \"Further investigation required\"\n  },\n  \"statistical_findings\": {\n    \"reporting_odds_ratio\": 6.298,\n    \"ror_95_ci\": \"(5.952-6.663)\",\n    \"prr\": 6.088,\n    \"case_count\": 1258,\n    \"signal_detection_criteria\": \"EMA Guidelines (n\\u22653, ROR\\u22652, LCI>1)\",\n    \"statistical_significance\": 0.0,\n    \"data_quality\": \"adequate\"\n  },\n  \"clinical_evaluation\": {\n    \"biological_plausibility\": \"UNCLEAR\",\n    \"proposed_mechanism\": \"No established mechanism in reference database\",\n    \"evidence_strength\": \"moderate\",\n    \"clinical_relevance\": \"HIGH\"\n  },\n  \"literature_summary\": {\n    \"pubmed_articles_found\": 8,\n    \"publication_year_range\": \"2008-2026\",\n    \"key_mesh_terms\": [\n      \"Acetates\",\n      \"Adolescent\",\n      \"Adult\",\n      \"Adverse Drug Reaction Reporting Systems\",\n      \"Aged\"\n    ],\n    \"data_source\": \"pubmed\"\n  },\n  \"regulatory_actions\": {\n    \"immediate_actions\": [\n      \"Enhanced surveillance\"\n    ],\n    \"monitoring_requirements\": [\n      \"Periodic safety reports\",\n      \"Signal tracking\"\n    ],\n    \"communication_plan\": \"Standard reporting\",\n    \"rems_consideration\": false\n  },\n  \"quality_assurance\": {\n    \"feedback_loop_iterations\": 2,\n    \"final_quality_score\": 97.0,\n    \"review_status\": true\n  },\n  \"conclusion\": \"Based on statistical analysis (ROR=6.298) and clinical review, this drug-event association requires immediate attention and further investigation. Risk level assessed as MODERATE.\"\n}",
+    "risk_level": "MODERATE",
+    "signal_status": "DETECTED",
+    "report_error": null,
+    "feedback_response": null,
+    "llm_error": null,
+    "status": "revised",
+    "revision_number": 1,
+    "feedback_addressed": "Regenerated after upstream revision(s): clinical"
+  },
+  "quality_review": {
+    "quality_scores": {
+      "alignment_score": 90,
+      "completeness_score": 100,
+      "risk_alignment_score": 100,
+      "actionability_score": 100,
+      "overall_score": 97.0
+    },
+    "approval_status": "approved",
+    "target_agents": [
+      "clinical"
+    ],
+    "issues": [
+      {
+        "type": "signal_uncertain_mechanism",
+        "severity": "medium",
+        "description": "Statistical signal detected but biological plausibility is UNCERTAIN \u2013 requires mechanistic investigation and clear documentation of uncertainty.",
+        "responsible_agent": "clinical",
+        "specific_action": "Investigate potential mechanisms. Either: (1) Propose a plausible mechanistic pathway with literature support, (2) Identify confounders that could explain a spurious signal, (3) Clearly document why the mechanism remains uncertain and what further research is needed.",
+        "evidence_needed": [
+          "mechanism_hypothesis",
+          "literature_review",
+          "confounder_analysis"
+        ],
+        "revision_reason": "signal_needs_mechanistic_explanation",
+        "mechanism_investigated": true,
+        "issue_status": "addressed",
+        "applied_penalty": 10,
+        "revision_number_seen": 1
+      }
+    ],
+    "issue_summary": {
+      "total_issues": 1,
+      "high_severity": 0,
+      "medium_severity": 1,
+      "low_severity": 0
+    },
+    "feedback_loop_decision": {
+      "requires_revision": false,
+      "requires_review": false,
+      "approved_for_final": true
+    },
+    "validation_checklist": {
+      "statistical_calculations": "VALIDATED",
+      "clinical_assessment": "VALIDATED",
+      "regulatory_compliance": "VALIDATED",
+      "evidence_consistency": "VALIDATED"
+    },
+    "raw_tool_output": "{\n  \"quality_scores\": {\n    \"alignment_score\": 90,\n    \"completeness_score\": 100,\n    \"risk_alignment_score\": 100,\n    \"actionability_score\": 100,\n    \"overall_score\": 97.0\n  },\n  \"approval_status\": \"approved\",\n  \"target_agents\": [\n    \"clinical\"\n  ],\n  \"issues\": [\n    {\n      \"type\": \"signal_uncertain_mechanism\",\n      \"severity\": \"medium\",\n      \"description\": \"Statistical signal detected but biological plausibility is UNCERTAIN \\u2013 requires mechanistic investigation and clear documentation of uncertainty.\",\n      \"responsible_agent\": \"clinical\",\n      \"specific_action\": \"Investigate potential mechanisms. Either: (1) Propose a plausible mechanistic pathway with literature support, (2) Identify confounders that could explain a spurious signal, (3) Clearly document why the mechanism remains uncertain and what further research is needed.\",\n      \"evidence_needed\": [\n        \"mechanism_hypothesis\",\n        \"literature_review\",\n        \"confounder_analysis\"\n      ],\n      \"revision_reason\": \"signal_needs_mechanistic_explanation\",\n      \"mechanism_investigated\": true,\n      \"issue_status\": \"addressed\",\n      \"applied_penalty\": 10,\n      \"revision_number_seen\": 1\n    }\n  ],\n  \"issue_summary\": {\n    \"total_issues\": 1,\n    \"high_severity\": 0,\n    \"medium_severity\": 1,\n    \"low_severity\": 0\n  },\n  \"feedback_loop_decision\": {\n    \"requires_revision\": false,\n    \"requires_review\": false,\n    \"approved_for_final\": true\n  },\n  \"validation_checklist\": {\n    \"statistical_calculations\": \"VALIDATED\",\n    \"clinical_assessment\": \"VALIDATED\",\n    \"regulatory_compliance\": \"VALIDATED\",\n    \"evidence_consistency\": \"VALIDATED\"\n  }\n}"
+  },
+  "feedback_loop_metadata": {
+    "iterations_used": 2,
+    "final_quality_score": 97.0,
+    "converged": true,
+    "stop_reason": "quality_threshold_met",
+    "max_iterations": 3,
+    "quality_threshold": 95.0,
+    "analysis_history": [
+      {
+        "iteration": 1,
+        "quality_score": 92.5,
+        "quality_scores": {
+          "alignment_score": 75,
+          "completeness_score": 100,
+          "risk_alignment_score": 100,
+          "actionability_score": 100,
+          "overall_score": 92.5
+        },
+        "approval_status": "approved",
+        "target_agents": [
+          "clinical"
+        ],
+        "issues": [
+          {
+            "type": "signal_uncertain_mechanism",
+            "severity": "high",
+            "responsible_agent": "clinical",
+            "description": "Statistical signal detected but biological plausibility is UNCERTAIN \u2013 requires mechanistic investigation and clear documentation of uncertainty.",
+            "issue_status": "unaddressed",
+            "applied_penalty": 25
+          }
+        ],
+        "actions": [
+          {
+            "agent": "statistical",
+            "action": "initial_run",
+            "revision_number": 0,
+            "tool_usage": [
+              "calculate_drug_event_statistics",
+              "validate_statistical_results"
+            ],
+            "feedback_snippet": null
+          },
+          {
+            "agent": "clinical",
+            "action": "initial_run",
+            "revision_number": 0,
+            "tool_usage": [
+              "search_clinical_literature",
+              "assess_biological_plausibility"
+            ],
+            "feedback_snippet": null
+          },
+          {
+            "agent": "regulatory",
+            "action": "initial_run",
+            "revision_number": 0,
+            "tool_usage": [
+              "generate_regulatory_report"
+            ],
+            "feedback_snippet": null
+          }
+        ]
+      },
+      {
+        "iteration": 2,
+        "quality_score": 97.0,
+        "quality_scores": {
+          "alignment_score": 90,
+          "completeness_score": 100,
+          "risk_alignment_score": 100,
+          "actionability_score": 100,
+          "overall_score": 97.0
+        },
+        "approval_status": "approved",
+        "target_agents": [
+          "clinical"
+        ],
+        "issues": [
+          {
+            "type": "signal_uncertain_mechanism",
+            "severity": "medium",
+            "responsible_agent": "clinical",
+            "description": "Statistical signal detected but biological plausibility is UNCERTAIN \u2013 requires mechanistic investigation and clear documentation of uncertainty.",
+            "issue_status": "addressed",
+            "applied_penalty": 10
+          }
+        ],
+        "actions": [
+          {
+            "agent": "clinical",
+            "action": "revised",
+            "revision_number": 1,
+            "tool_usage": [
+              "search_clinical_literature",
+              "assess_biological_plausibility"
+            ],
+            "feedback_snippet": "QC identified 1 issue(s) for the clinical agent:\n1. [HIGH] signal_uncertain_mechanism: Statistical signal detected but biological plausibility is UNCERTAIN \u2013 requires mechanistic investigation and cle"
+          },
+          {
+            "agent": "regulatory",
+            "action": "regenerated",
+            "revision_number": 1,
+            "tool_usage": [
+              "generate_regulatory_report"
+            ],
+            "feedback_snippet": "Regenerated after upstream revision(s): clinical"
+          }
+        ]
+      }
+    ]
+  },
+  "audit_log_path": "audit_logs/audit_20261017_182736_MONTELUKAST.json"
+}
