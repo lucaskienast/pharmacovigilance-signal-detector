@@ -1,0 +1,292 @@
+{
+  "drug_name": "METFORMIN",
+  "adverse_event": "LACTIC ACIDOSIS",
+  "timestamp": "2026-10-17T18:28:15.152516",
+  "literature_evidence": {
+    "source": "pubmed",
+    "available": true,
+    "query": "METFORMIN[Title/Abstract] AND LACTIC ACIDOSIS[Title/Abstract]",
+    "n_articles": 20,
+    "latest_year": 2026,
+    "earliest_year": 2025,
+    "year_range": "2025-2026",
+    "mesh_terms_sample": [
+      "Acidosis, Lactic",
+      "Acute Kidney Injury",
+      "Administration, Oral",
+      "Aged",
+      "Aged, 80 and over",
+      "Alanine",
+      "Animals",
+      "Benzhydryl Compounds",
+      "Blood Glucose",
+      "Blood Platelets",
+      "Brain Diseases",
+      "Diabetes Mellitus, Type 2",
+      "Dipeptidyl-Peptidase IV Inhibitors",
+      "Drug Delivery Systems",
+      "Drug Therapy, Combination",
+      "Female",
+      "Gastrointestinal Diseases",
+      "Gastrointestinal Microbiome",
+      "Glomerular Filtration Rate",
+      "Gluconeogenesis"
+    ],
+    "evidence_strength": "strong",
+    "sample_articles": [
+      {
+        "pmid": "42834623",
+        "title": "Successful treatment of metformin-associated lactic acidosis without hemodialysis.",
+        "year": 2026,
+        "journal": "Journal of pediatric endocrinology & metabolism : JPEM",
+        "doi": "10.1515/jpem-2026-0161",
+        "authors": [
+          "Praewa Sophark",
+          "Somchit Jaruratanasirikul",
+          "Pornsak Dissaneewate"
+        ]
+      },
+      {
+        "pmid": "42789768",
+        "title": "Concurrent metformin-associated lactic acidosis and euglycemic diabetic ketoacidosis from tirzepatide starvation ketosis.",
+        "year": 2026,
+        "journal": "Endocrinology, diabetes & metabolism case reports",
+        "doi": "10.1530/EDM-26-0025",
+        "authors": [
+          "Frank Epitropoulos",
+          "Omar Brijawi",
+          "Khizar Ghuman"
+        ]
+      },
+      {
+        "pmid": "42730466",
+        "title": "Severe Metformin Intoxication Resulting in Extreme Lactic Acidosis.",
+        "year": 2026,
+        "journal": "Journal of medical cases",
+        "doi": "10.14740/jmc5370",
+        "authors": [
+          "Miriam Koz\u00e1rov\u00e1",
+          "Zuzana Kozelov\u00e1",
+          "Slavom\u00edr Pere\u010dinsk\u00fd"
+        ]
+      },
+      {
+        "pmid": "42696402",
+        "title": "Metformin-Associated Lactic Acidosis and Relative Euglycemic Ketoacidosis Precipitated by a Glucagon-Like Peptide-1 Receptor Agonist: A Case Report and Literature Review.",
+        "year": 2026,
+        "journal": "Kidney360",
+        "doi": "10.34067/KID.0000001379",
+        "authors": [
+          "Harsha Adnani",
+          "Zoya Ladiwala",
+          "Melinda Lee"
+        ]
+      },
+      {
+        "pmid": "42545322",
+        "title": "Metformin's disruption of gluconeogenesis in type 2 diabetes impairments of the cori and alanine cycles as hidden drivers of metabolic waste accumulation, NF-\u03baBHIF-1\u03b1-mediated low-grade inflammation, ",
+        "year": 2026,
+        "journal": "Problemy endokrinologii",
+        "doi": "10.14341/probl13618",
+        "authors": [
+          "Maher Akl",
+          "Amr Ahmed"
+        ]
+      }
+    ]
+  },
+  "statistical_analysis": {
+    "agent_response": "## Statistical Signal Assessment\nData source: openFDA_live_API  \nCase count (drug_event, \"a\"): 20131  \n\n## Key Statistics (tool-derived)\n- ROR: 85.566 (95% CI 83.613\u201387.565; openFDA)\n- PRR: 30.382\n- Chi-square: 585114.35\n- p-value: 0.0 (below the tool's rounding precision)\n- Chi-square test valid: true\n\n## Signal Decision (EMA criteria)\n- Case count >= 3: MET (tool value: 20131)\n- ROR >= 2: MET (tool value: 85.566)\n- Lower 95% CI bound > 1: MET (tool value: 83.613)\n- p < 0.05 (chi-square valid): MET (tool value: 0.0)\n\nSIGNAL DETECTED, confirming it matches the tool's signal_detection.signal_detected field.\n\n## Validation & Data Quality\nValidation status: PASSED  \nChecks performed: \n- contingency_table_sum: PASSED\n- ror_bounds: PASSED\n- ci_bounds: PASSED\n- p_value_bounds: PASSED\n- signal_logic: PASSED  \nNo issues were reported, and the recommendation states that statistical calculations are valid.\n\n## Limitations\nData quality flags: none present, indicating adequate quality.  \nInherent FAERS limitations include under-reporting, stimulated/notoriety reporting, duplicate reports, confounding by indication, and no exposure denominator (disproportionality is not incidence or risk).",
+    "tool_usage": [
+      "calculate_drug_event_statistics",
+      "validate_statistical_results"
+    ],
+    "raw_data": "{\n  \"drug_name\": \"METFORMIN\",\n  \"adverse_event\": \"LACTIC ACIDOSIS\",\n  \"data_source\": \"openFDA_live_API\",\n  \"contingency_table\": {\n    \"drug_event\": 20131,\n    \"drug_no_event\": 412768,\n    \"no_drug_event\": 11541,\n    \"no_drug_no_event\": 20248250,\n    \"total\": 20692690,\n    \"total_drug_reports\": 432899,\n    \"total_event_reports\": 31672\n  },\n  \"statistics\": {\n    \"ror\": 85.566,\n    \"ror_95ci_lower\": 83.613,\n    \"ror_95ci_upper\": 87.565,\n    \"prr\": 30.382,\n    \"chi_square\": 585114.35,\n    \"p_value\": 0.0,\n    \"chi2_test_valid\": true\n  },\n  \"signal_detection\": {\n    \"signal_detected\": true,\n    \"criteria_met\": {\n      \"minimum_cases\": true,\n      \"ror_threshold\": true,\n      \"statistical_significance\": true\n    },\n    \"interpretation\": \"Signal DETECTED based on EMA criteria\"\n  },\n  \"data_quality\": {\n    \"flags\": [],\n    \"quality_assessment\": \"adequate\",\n    \"notes\": \"Chi-square test performed successfully\"\n  }\n}",
+    "validation": {
+      "validation_status": "PASSED",
+      "checks_performed": [
+        "contingency_table_sum: PASSED",
+        "ror_bounds: PASSED",
+        "ci_bounds: PASSED",
+        "p_value_bounds: PASSED",
+        "signal_logic: PASSED"
+      ],
+      "issues": [],
+      "recommendation": "Statistical calculations are valid"
+    },
+    "statistics_summary": {
+      "signal_detected": true,
+      "case_count": 20131,
+      "ror": 85.566,
+      "ror_95ci": [
+        83.613,
+        87.565
+      ],
+      "prr": 30.382,
+      "p_value": 0.0,
+      "chi2_test_valid": true,
+      "data_quality_flags": [],
+      "data_source": "openFDA_live_API"
+    },
+    "ema_criteria_check": [
+      {
+        "criterion": "case count >= 3",
+        "tool_value": 20131,
+        "met": true
+      },
+      {
+        "criterion": "ROR >= 2",
+        "tool_value": 85.566,
+        "met": true
+      },
+      {
+        "criterion": "lower 95% CI bound > 1",
+        "tool_value": 83.613,
+        "met": true
+      },
+      {
+        "criterion": "p < 0.05 (chi-square valid)",
+        "tool_value": 0.0,
+        "met": true
+      }
+    ],
+    "data_access_warnings": [],
+    "numeric_grounding": {
+      "numbers_checked": 17,
+      "ungrounded_numbers": [],
+      "grounded": true
+    },
+    "llm_error": null,
+    "status": "completed",
+    "revision_number": 0,
+    "feedback_addressed": null
+  },
+  "clinical_assessment": {
+    "agent_response": "## Clinical Assessment Summary\nThe statistical signal for lactic acidosis associated with metformin is robust, supported by a strong body of literature indicating a clinically meaningful association. The biological plausibility of this adverse event is high, with a well-established mechanism of action. \n\n## Literature Evidence (PubMed)\nThe literature search identified 25 publications related to metformin and lactic acidosis, indicating a strong evidence strength. The year range of the publications is from 2025 to 2026. Sample publications include:\n- PMID 42834623: \"Successful treatment of metformin-associated lactic acidosis without hemodialysis.\" (2026)\n- PMID 42789768: \"Concurrent metformin-associated lactic acidosis and euglycemic diabetic ketoacidosis from tirzepatide starvation ketosis.\" (2026)\n- PMID 42730466: \"Severe Metformin Intoxication Resulting in Extreme Lactic Acidosis.\" (2026)\n\n## Biological Plausibility & Mechanism\nThe proposed mechanism for lactic acidosis associated with metformin is that it inhibits hepatic gluconeogenesis and mitochondrial complex I, leading to lactate accumulation. This mechanism operates through the pathway of mitochondrial respiration inhibition. The confidence level in this assessment is high, supporting the biological plausibility of the association.\n\n## Causality & Confounding\nWhile a strong statistical signal has been detected, causality cannot be definitively established from the available data. The Bradford Hill criteria suggest that the strength of the association is significant, and the consistency of findings in the literature supports this. However, temporality and dose-response relationships are not assessable from the available data. Potential confounders include underlying renal impairment, which is a known risk factor for lactic acidosis, and the possibility of stimulated reporting due to increased awareness of this adverse event following safety communications.\n\n## Classification: PLAUSIBLE\nThe overall assessment from the biological plausibility tool is PLAUSIBLE, which is consistent with the findings from the literature and statistical analysis.\n\n## Clinical Importance\nLactic acidosis is a serious condition that can lead to significant morbidity and mortality, particularly in populations with predisposing factors such as renal impairment or other comorbidities. Patients with type 2 diabetes, especially the elderly or those with compromised renal function, may be at higher risk for this adverse event when treated with metformin. Monitoring and awareness are crucial in these populations to prevent and manage this potentially life-threatening condition.",
+    "tool_usage": [
+      "search_clinical_literature",
+      "assess_biological_plausibility"
+    ],
+    "raw_data": {
+      "literature_json": "{\n  \"drug_name\": \"METFORMIN\",\n  \"adverse_event\": \"LACTIC ACIDOSIS\",\n  \"literature_found\": true,\n  \"source\": \"pubmed\",\n  \"evidence_summary\": {\n    \"evidence_strength\": \"strong\",\n    \"publication_count\": 25,\n    \"year_range\": \"2025-2026\",\n    \"latest_publication_year\": 2026,\n    \"clinical_relevance\": \"High\"\n  },\n  \"mesh_terms\": [\n    \"Acidosis, Lactic\",\n    \"Acute Kidney Injury\",\n    \"Administration, Oral\",\n    \"Aged\",\n    \"Aged, 80 and over\",\n    \"Alanine\",\n    \"Animals\",\n    \"Benzhydryl Compounds\",\n    \"Blood Glucose\",\n    \"Blood Platelets\",\n    \"Brain Diseases\",\n    \"Diabetes Mellitus, Type 2\",\n    \"Dipeptidyl-Peptidase IV Inhibitors\",\n    \"Drug Delivery Systems\",\n    \"Drug Therapy, Combination\",\n    \"Female\",\n    \"Gastrointestinal Diseases\",\n    \"Gastrointestinal Microbiome\",\n    \"Glomerular Filtration Rate\",\n    \"Gluconeogenesis\"\n  ],\n  \"sample_publications\": [\n    {\n      \"pmid\": \"42834623\",\n      \"title\": \"Successful treatment of metformin-associated lactic acidosis without hemodialysis.\",\n      \"year\": 2026,\n      \"journal\": \"Journal of pediatric endocrinology & metabolism : JPEM\",\n      \"doi\": \"10.1515/jpem-2026-0161\",\n      \"authors\": [\n        \"Praewa Sophark\",\n        \"Somchit Jaruratanasirikul\",\n        \"Pornsak Dissaneewate\"\n      ]\n    },\n    {\n      \"pmid\": \"42789768\",\n      \"title\": \"Concurrent metformin-associated lactic acidosis and euglycemic diabetic ketoacidosis from tirzepatide starvation ketosis.\",\n      \"year\": 2026,\n      \"journal\": \"Endocrinology, diabetes & metabolism case reports\",\n      \"doi\": \"10.1530/EDM-26-0025\",\n      \"authors\": [\n        \"Frank Epitropoulos\",\n        \"Omar Brijawi\",\n        \"Khizar Ghuman\"\n      ]\n    },\n    {\n      \"pmid\": \"42730466\",\n      \"title\": \"Severe Metformin Intoxication Resulting in Extreme Lactic Acidosis.\",\n      \"year\": 2026,\n      \"journal\": \"Journal of medical cases\",\n      \"doi\": \"10.14740/jmc5370\",\n      \"authors\": [\n        \"Miriam Koz\\u00e1rov\\u00e1\",\n        \"Zuzana Kozelov\\u00e1\",\n        \"Slavom\\u00edr Pere\\u010dinsk\\u00fd\"\n      ]\n    },\n    {\n      \"pmid\": \"42696402\",\n      \"title\": \"Metformin-Associated Lactic Acidosis and Relative Euglycemic Ketoacidosis Precipitated by a Glucagon-Like Peptide-1 Receptor Agonist: A Case Report and Literature Review.\",\n      \"year\": 2026,\n      \"journal\": \"Kidney360\",\n      \"doi\": \"10.34067/KID.0000001379\",\n      \"authors\": [\n        \"Harsha Adnani\",\n        \"Zoya Ladiwala\",\n        \"Melinda Lee\"\n      ]\n    },\n    {\n      \"pmid\": \"42545322\",\n      \"title\": \"Metformin's disruption of gluconeogenesis in type 2 diabetes impairments of the cori and alanine cycles as hidden drivers of metabolic waste accumulation, NF-\\u03baBHIF-1\\u03b1-mediated low-grade inflammation, \",\n      \"year\": 2026,\n      \"journal\": \"Problemy endokrinologii\",\n      \"doi\": \"10.14341/probl13618\",\n      \"authors\": [\n        \"Maher Akl\",\n        \"Amr Ahmed\"\n      ]\n    }\n  ],\n  \"search_query\": \"METFORMIN[Title/Abstract] AND LACTIC ACIDOSIS[Title/Abstract]\",\n  \"data_availability\": {\n    \"pubmed_available\": true,\n    \"reason\": null\n  }\n}",
+      "plausibility_json": "{\n  \"drug_name\": \"METFORMIN\",\n  \"adverse_event\": \"LACTIC ACIDOSIS\",\n  \"mechanism_assessment\": {\n    \"biologically_plausible\": true,\n    \"proposed_mechanism\": \"Inhibits hepatic gluconeogenesis and mitochondrial complex I, leading to lactate accumulation\",\n    \"mechanistic_pathway\": \"Mitochondrial respiration inhibition\",\n    \"confidence_level\": \"high\"\n  },\n  \"literature_support\": \"strong\",\n  \"overall_assessment\": \"PLAUSIBLE\",\n  \"notes\": \"Assessment based on known pharmacological mechanisms\"\n}",
+      "combined_for_qc": "{\"drug_name\": \"METFORMIN\", \"adverse_event\": \"LACTIC ACIDOSIS\", \"literature_found\": true, \"source\": \"pubmed\", \"evidence_summary\": {\"evidence_strength\": \"strong\", \"publication_count\": 25, \"year_range\": \"2025-2026\", \"latest_publication_year\": 2026, \"clinical_relevance\": \"High\"}, \"mesh_terms\": [\"Acidosis, Lactic\", \"Acute Kidney Injury\", \"Administration, Oral\", \"Aged\", \"Aged, 80 and over\", \"Alanine\", \"Animals\", \"Benzhydryl Compounds\", \"Blood Glucose\", \"Blood Platelets\", \"Brain Diseases\", \"Diabetes Mellitus, Type 2\", \"Dipeptidyl-Peptidase IV Inhibitors\", \"Drug Delivery Systems\", \"Drug Therapy, Combination\", \"Female\", \"Gastrointestinal Diseases\", \"Gastrointestinal Microbiome\", \"Glomerular Filtration Rate\", \"Gluconeogenesis\"], \"sample_publications\": [{\"pmid\": \"42834623\", \"title\": \"Successful treatment of metformin-associated lactic acidosis without hemodialysis.\", \"year\": 2026, \"journal\": \"Journal of pediatric endocrinology & metabolism : JPEM\", \"doi\": \"10.1515/jpem-2026-0161\", \"authors\": [\"Praewa Sophark\", \"Somchit Jaruratanasirikul\", \"Pornsak Dissaneewate\"]}, {\"pmid\": \"42789768\", \"title\": \"Concurrent metformin-associated lactic acidosis and euglycemic diabetic ketoacidosis from tirzepatide starvation ketosis.\", \"year\": 2026, \"journal\": \"Endocrinology, diabetes & metabolism case reports\", \"doi\": \"10.1530/EDM-26-0025\", \"authors\": [\"Frank Epitropoulos\", \"Omar Brijawi\", \"Khizar Ghuman\"]}, {\"pmid\": \"42730466\", \"title\": \"Severe Metformin Intoxication Resulting in Extreme Lactic Acidosis.\", \"year\": 2026, \"journal\": \"Journal of medical cases\", \"doi\": \"10.14740/jmc5370\", \"authors\": [\"Miriam Koz\\u00e1rov\\u00e1\", \"Zuzana Kozelov\\u00e1\", \"Slavom\\u00edr Pere\\u010dinsk\\u00fd\"]}, {\"pmid\": \"42696402\", \"title\": \"Metformin-Associated Lactic Acidosis and Relative Euglycemic Ketoacidosis Precipitated by a Glucagon-Like Peptide-1 Receptor Agonist: A Case Report and Literature Review.\", \"year\": 2026, \"journal\": \"Kidney360\", \"doi\": \"10.34067/KID.0000001379\", \"authors\": [\"Harsha Adnani\", \"Zoya Ladiwala\", \"Melinda Lee\"]}, {\"pmid\": \"42545322\", \"title\": \"Metformin's disruption of gluconeogenesis in type 2 diabetes impairments of the cori and alanine cycles as hidden drivers of metabolic waste accumulation, NF-\\u03baBHIF-1\\u03b1-mediated low-grade inflammation, \", \"year\": 2026, \"journal\": \"Problemy endokrinologii\", \"doi\": \"10.14341/probl13618\", \"authors\": [\"Maher Akl\", \"Amr Ahmed\"]}], \"search_query\": \"METFORMIN[Title/Abstract] AND LACTIC ACIDOSIS[Title/Abstract]\", \"data_availability\": {\"pubmed_available\": true, \"reason\": null}, \"mechanism_assessment\": {\"biologically_plausible\": true, \"proposed_mechanism\": \"Inhibits hepatic gluconeogenesis and mitochondrial complex I, leading to lactate accumulation\", \"mechanistic_pathway\": \"Mitochondrial respiration inhibition\", \"confidence_level\": \"high\"}, \"literature_support\": \"strong\", \"overall_assessment\": \"PLAUSIBLE\", \"notes\": \"Assessment based on known pharmacological mechanisms\", \"narrative_response\": \"## Clinical Assessment Summary\\nThe statistical signal for lactic acidosis associated with metformin is robust, supported by a strong body of literature indicating a clinically meaningful association. The biological plausibility of this adverse event is high, with a well-established mechanism of action. \\n\\n## Literature Evidence (PubMed)\\nThe literature search identified 25 publications related to metformin and lactic acidosis, indicating a strong evidence strength. The year range of the publications is from 2025 to 2026. Sample publications include:\\n- PMID 42834623: \\\"Successful treatment of metformin-associated lactic acidosis without hemodialysis.\\\" (2026)\\n- PMID 42789768: \\\"Concurrent metformin-associated lactic acidosis and euglycemic diabetic ketoacidosis from tirzepatide starvation ketosis.\\\" (2026)\\n- PMID 42730466: \\\"Severe Metformin Intoxication Resulting in Extreme Lactic Acidosis.\\\" (2026)\\n\\n## Biological Plausibility & Mechanism\\nThe proposed mechanism for lactic acidosis associated with metformin is that it inhibits hepatic gluconeogenesis and mitochondrial complex I, leading to lactate accumulation. This mechanism operates through the pathway of mitochondrial respiration inhibition. The confidence level in this assessment is high, supporting the biological plausibility of the association.\\n\\n## Causality & Confounding\\nWhile a strong statistical signal has been detected, causality cannot be definitively established from the available data. The Bradford Hill criteria suggest that the strength of the association is significant, and the consistency of findings in the literature supports this. However, temporality and dose-response relationships are not assessable from the available data. Potential confounders include underlying renal impairment, which is a known risk factor for lactic acidosis, and the possibility of stimulated reporting due to increased awareness of this adverse event following safety communications.\\n\\n## Classification: PLAUSIBLE\\nThe overall assessment from the biological plausibility tool is PLAUSIBLE, which is consistent with the findings from the literature and statistical analysis.\\n\\n## Clinical Importance\\nLactic acidosis is a serious condition that can lead to significant morbidity and mortality, particularly in populations with predisposing factors such as renal impairment or other comorbidities. Patients with type 2 diabetes, especially the elderly or those with compromised renal function, may be at higher risk for this adverse event when treated with metformin. Monitoring and awareness are crucial in these populations to prevent and manage this potentially life-threatening condition.\", \"_revision_number\": 0}"
+    },
+    "classification": "PLAUSIBLE",
+    "tool_assessment": "PLAUSIBLE",
+    "classification_consistent_with_tool": true,
+    "evidence_check": {
+      "publication_count": 25,
+      "shared_pubmed_articles": 20,
+      "search_evidence_strength": "strong",
+      "shared_evidence_strength": "strong",
+      "tool_evidence_strength": "strong",
+      "overclaimed_strengths": []
+    },
+    "llm_error": null,
+    "status": "completed",
+    "revision_number": 0,
+    "feedback_addressed": null
+  },
+  "regulatory_report": {
+    "agent_response": "{\n  \"report_header\": {\n    \"report_type\": \"Pharmacovigilance Signal Assessment\",\n    \"report_version\": \"2.0\",\n    \"drug_name\": \"METFORMIN\",\n    \"adverse_event\": \"LACTIC ACIDOSIS\",\n    \"assessment_date\": \"2024-Q4\",\n    \"regulatory_framework\": \"FDA/ICH E2B(R3)\"\n  },\n  \"executive_summary\": {\n    \"signal_status\": \"DETECTED\",\n    \"risk_level\": \"HIGH\",\n    \"evidence_strength\": \"strong\",\n    \"recommendation\": \"Further investigation required\"\n  },\n  \"statistical_findings\": {\n    \"reporting_odds_ratio\": 85.566,\n    \"ror_95_ci\": \"(83.613-87.565)\",\n    \"prr\": 30.382,\n    \"case_count\": 20131,\n    \"signal_detection_criteria\": \"EMA Guidelines (n\\u22653, ROR\\u22652, LCI>1)\",\n    \"statistical_significance\": 0.0,\n    \"data_quality\": \"adequate\"\n  },\n  \"clinical_evaluation\": {\n    \"biological_plausibility\": \"PLAUSIBLE\",\n    \"proposed_mechanism\": \"Inhibits hepatic gluconeogenesis and mitochondrial complex I, leading to lactate accumulation\",\n    \"evidence_strength\": \"strong\",\n    \"clinical_relevance\": \"HIGH\"\n  },\n  \"literature_summary\": {\n    \"pubmed_articles_found\": 20,\n    \"publication_year_range\": \"2025-2026\",\n    \"key_mesh_terms\": [\n      \"Acidosis, Lactic\",\n      \"Acute Kidney Injury\",\n      \"Administration, Oral\",\n      \"Aged\",\n      \"Aged, 80 and over\"\n    ],\n    \"data_source\": \"pubmed\"\n  },\n  \"regulatory_actions\": {\n    \"immediate_actions\": [\n      \"Update product labeling\",\n      \"Healthcare provider notification\"\n    ],\n    \"monitoring_requirements\": [\n      \"Periodic safety reports\",\n      \"Signal tracking\"\n    ],\n    \"communication_plan\": \"Urgent safety communication\",\n    \"rems_consideration\": true\n  },\n  \"quality_assurance\": {\n    \"feedback_loop_iterations\": 1,\n    \"final_quality_score\": 100.0,\n    \"review_status\": true\n  },\n  \"conclusion\": \"Based on statistical analysis (ROR=85.566) and clinical review, this drug-event association requires immediate attention and further investigation. Risk level assessed as HIGH.\"\n}",
+    "tool_usage": [
+      "generate_regulatory_report"
+    ],
+    "raw_data": "{\n  \"report_header\": {\n    \"report_type\": \"Pharmacovigilance Signal Assessment\",\n    \"report_version\": \"2.0\",\n    \"drug_name\": \"METFORMIN\",\n    \"adverse_event\": \"LACTIC ACIDOSIS\",\n    \"assessment_date\": \"2024-Q4\",\n    \"regulatory_framework\": \"FDA/ICH E2B(R3)\"\n  },\n  \"executive_summary\": {\n    \"signal_status\": \"DETECTED\",\n    \"risk_level\": \"HIGH\",\n    \"evidence_strength\": \"strong\",\n    \"recommendation\": \"Further investigation required\"\n  },\n  \"statistical_findings\": {\n    \"reporting_odds_ratio\": 85.566,\n    \"ror_95_ci\": \"(83.613-87.565)\",\n    \"prr\": 30.382,\n    \"case_count\": 20131,\n    \"signal_detection_criteria\": \"EMA Guidelines (n\\u22653, ROR\\u22652, LCI>1)\",\n    \"statistical_significance\": 0.0,\n    \"data_quality\": \"adequate\"\n  },\n  \"clinical_evaluation\": {\n    \"biological_plausibility\": \"PLAUSIBLE\",\n    \"proposed_mechanism\": \"Inhibits hepatic gluconeogenesis and mitochondrial complex I, leading to lactate accumulation\",\n    \"evidence_strength\": \"strong\",\n    \"clinical_relevance\": \"HIGH\"\n  },\n  \"literature_summary\": {\n    \"pubmed_articles_found\": 20,\n    \"publication_year_range\": \"2025-2026\",\n    \"key_mesh_terms\": [\n      \"Acidosis, Lactic\",\n      \"Acute Kidney Injury\",\n      \"Administration, Oral\",\n      \"Aged\",\n      \"Aged, 80 and over\"\n    ],\n    \"data_source\": \"pubmed\"\n  },\n  \"regulatory_actions\": {\n    \"immediate_actions\": [\n      \"Update product labeling\",\n      \"Healthcare provider notification\"\n    ],\n    \"monitoring_requirements\": [\n      \"Periodic safety reports\",\n      \"Signal tracking\"\n    ],\n    \"communication_plan\": \"Urgent safety communication\",\n    \"rems_consideration\": true\n  },\n  \"quality_assurance\": {\n    \"feedback_loop_iterations\": 1,\n    \"final_quality_score\": 100.0,\n    \"review_status\": true\n  },\n  \"conclusion\": \"Based on statistical analysis (ROR=85.566) and clinical review, this drug-event association requires immediate attention and further investigation. Risk level assessed as HIGH.\"\n}",
+    "risk_level": "HIGH",
+    "signal_status": "DETECTED",
+    "report_error": null,
+    "feedback_response": null,
+    "llm_error": null,
+    "status": "completed",
+    "revision_number": 0,
+    "feedback_addressed": null
+  },
+  "quality_review": {
+    "quality_scores": {
+      "alignment_score": 100,
+      "completeness_score": 100,
+      "risk_alignment_score": 100,
+      "actionability_score": 100,
+      "overall_score": 100
+    },
+    "approval_status": "approved",
+    "target_agents": [],
+    "issues": [],
+    "issue_summary": {
+      "total_issues": 0,
+      "high_severity": 0,
+      "medium_severity": 0,
+      "low_severity": 0
+    },
+    "feedback_loop_decision": {
+      "requires_revision": false,
+      "requires_review": false,
+      "approved_for_final": true
+    },
+    "validation_checklist": {
+      "statistical_calculations": "VALIDATED",
+      "clinical_assessment": "VALIDATED",
+      "regulatory_compliance": "VALIDATED",
+      "evidence_consistency": "VALIDATED"
+    },
+    "raw_tool_output": "{\n  \"quality_scores\": {\n    \"alignment_score\": 100,\n    \"completeness_score\": 100,\n    \"risk_alignment_score\": 100,\n    \"actionability_score\": 100,\n    \"overall_score\": 100\n  },\n  \"approval_status\": \"approved\",\n  \"target_agents\": [],\n  \"issues\": [],\n  \"issue_summary\": {\n    \"total_issues\": 0,\n    \"high_severity\": 0,\n    \"medium_severity\": 0,\n    \"low_severity\": 0\n  },\n  \"feedback_loop_decision\": {\n    \"requires_revision\": false,\n    \"requires_review\": false,\n    \"approved_for_final\": true\n  },\n  \"validation_checklist\": {\n    \"statistical_calculations\": \"VALIDATED\",\n    \"clinical_assessment\": \"VALIDATED\",\n    \"regulatory_compliance\": \"VALIDATED\",\n    \"evidence_consistency\": \"VALIDATED\"\n  }\n}"
+  },
+  "feedback_loop_metadata": {
+    "iterations_used": 1,
+    "final_quality_score": 100.0,
+    "converged": true,
+    "stop_reason": "quality_threshold_met",
+    "max_iterations": 3,
+    "quality_threshold": 95.0,
+    "analysis_history": [
+      {
+        "iteration": 1,
+        "quality_score": 100,
+        "quality_scores": {
+          "alignment_score": 100,
+          "completeness_score": 100,
+          "risk_alignment_score": 100,
+          "actionability_score": 100,
+          "overall_score": 100
+        },
+        "approval_status": "approved",
+        "target_agents": [],
+        "issues": [],
+        "actions": [
+          {
+            "agent": "statistical",
+            "action": "initial_run",
+            "revision_number": 0,
+            "tool_usage": [
+              "calculate_drug_event_statistics",
+              "validate_statistical_results"
+            ],
+            "feedback_snippet": null
+          },
+          {
+            "agent": "clinical",
+            "action": "initial_run",
+            "revision_number": 0,
+            "tool_usage": [
+              "search_clinical_literature",
+              "assess_biological_plausibility"
+            ],
+            "feedback_snippet": null
+          },
+          {
+            "agent": "regulatory",
+            "action": "initial_run",
+            "revision_number": 0,
+            "tool_usage": [
+              "generate_regulatory_report"
+            ],
+            "feedback_snippet": null
+          }
+        ]
+      }
+    ]
+  },
+  "audit_log_path": "audit_logs/audit_20261017_182758_METFORMIN.json"
+}

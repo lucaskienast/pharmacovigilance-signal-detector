@@ -1,0 +1,290 @@
+{
+  "run_id": "057770a8",
+  "start_timestamp": "2026-10-17T18:27:58.885500",
+  "end_timestamp": "2026-10-17T18:28:15.152529",
+  "drug_name": "METFORMIN",
+  "adverse_event": "LACTIC ACIDOSIS",
+  "metadata": {
+    "max_iterations": 3,
+    "quality_threshold": 95.0,
+    "faers_live_api": true,
+    "model": "gpt-4o-mini"
+  },
+  "events": [
+    {
+      "timestamp": "2026-10-17T18:27:58.885516",
+      "event_type": "analysis_started",
+      "level": "info",
+      "data": {
+        "drug_name": "METFORMIN",
+        "adverse_event": "LACTIC ACIDOSIS"
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:00.268072",
+      "event_type": "literature_fetched",
+      "level": "info",
+      "data": {
+        "source": "pubmed",
+        "available": true,
+        "n_articles": 20,
+        "evidence_strength": "strong",
+        "query": "METFORMIN[Title/Abstract] AND LACTIC ACIDOSIS[Title/Abstract]"
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:09.607660",
+      "event_type": "agent_executed",
+      "level": "info",
+      "data": {
+        "agent": "statistical",
+        "tool_calls": [
+          "calculate_drug_event_statistics",
+          "validate_statistical_results"
+        ],
+        "success": true,
+        "revision_number": 0,
+        "is_revision": false,
+        "feedback_context": null
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:09.608105",
+      "event_type": "statistical_signal_assessment",
+      "level": "info",
+      "data": {
+        "revision_number": 0,
+        "signal_detected": true,
+        "case_count": 20131,
+        "ror": 85.566,
+        "ror_95ci": [
+          83.613,
+          87.565
+        ],
+        "prr": 30.382,
+        "p_value": 0.0,
+        "chi2_test_valid": true,
+        "data_quality_flags": [],
+        "data_source": "openFDA_live_API",
+        "validation_status": "PASSED",
+        "data_access_warnings": [],
+        "ungrounded_numbers": []
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.144205",
+      "event_type": "agent_executed",
+      "level": "info",
+      "data": {
+        "agent": "clinical",
+        "tool_calls": [
+          "search_clinical_literature",
+          "assess_biological_plausibility"
+        ],
+        "success": true,
+        "revision_number": 0,
+        "is_revision": false,
+        "feedback_context": null
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.145046",
+      "event_type": "clinical_plausibility_assessment",
+      "level": "info",
+      "data": {
+        "revision_number": 0,
+        "classification": "PLAUSIBLE",
+        "tool_assessment": "PLAUSIBLE",
+        "classification_consistent_with_tool": true,
+        "publication_count": 25,
+        "shared_pubmed_articles": 20,
+        "search_evidence_strength": "strong",
+        "shared_evidence_strength": "strong",
+        "tool_evidence_strength": "strong",
+        "overclaimed_strengths": []
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.147407",
+      "event_type": "agent_executed",
+      "level": "info",
+      "data": {
+        "agent": "regulatory",
+        "tool_calls": [
+          "generate_regulatory_report"
+        ],
+        "success": true,
+        "revision_number": 0,
+        "is_revision": false,
+        "feedback_context": null
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.147944",
+      "event_type": "regulatory_report_generated",
+      "level": "info",
+      "data": {
+        "revision_number": 0,
+        "risk_level": "HIGH",
+        "signal_status": "DETECTED",
+        "immediate_actions": [
+          "Update product labeling",
+          "Healthcare provider notification"
+        ],
+        "report_error": null,
+        "feedback_response_snippet": null
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.149112",
+      "event_type": "quality_review",
+      "level": "info",
+      "data": {
+        "scores": {
+          "alignment_score": 100,
+          "completeness_score": 100,
+          "risk_alignment_score": 100,
+          "actionability_score": 100,
+          "overall_score": 100
+        },
+        "issues_count": 0,
+        "issues_summary": [],
+        "approval_status": "approved",
+        "target_agents": []
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.149764",
+      "event_type": "iteration_completed",
+      "level": "info",
+      "data": {
+        "iteration": 1,
+        "quality_score": 100,
+        "issues_count": 0,
+        "actions_count": 3
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.150959",
+      "event_type": "final_report_generated",
+      "level": "info",
+      "data": {
+        "risk_level": "HIGH",
+        "signal_status": "DETECTED",
+        "revision_number": 0
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.151718",
+      "event_type": "feedback_loop_completed",
+      "level": "info",
+      "data": {
+        "iterations_used": 1,
+        "final_quality_score": 100.0,
+        "converged": true,
+        "stop_reason": "quality_threshold_met",
+        "max_iterations": 3,
+        "quality_threshold": 95.0
+      }
+    },
+    {
+      "timestamp": "2026-10-17T18:28:15.152564",
+      "event_type": "analysis_completed",
+      "level": "info",
+      "data": {
+        "status": "completed",
+        "total_iterations": 1,
+        "final_quality_score": 100
+      }
+    }
+  ],
+  "iterations": [
+    {
+      "iteration": 1,
+      "timestamp": "2026-10-17T18:28:15.149741",
+      "quality_score": 100,
+      "issues_found": 0,
+      "issues": [],
+      "actions_taken": [
+        {
+          "agent": "statistical",
+          "action": "initial_run",
+          "revision_number": 0,
+          "tool_usage": [
+            "calculate_drug_event_statistics",
+            "validate_statistical_results"
+          ],
+          "feedback_snippet": null
+        },
+        {
+          "agent": "clinical",
+          "action": "initial_run",
+          "revision_number": 0,
+          "tool_usage": [
+            "search_clinical_literature",
+            "assess_biological_plausibility"
+          ],
+          "feedback_snippet": null
+        },
+        {
+          "agent": "regulatory",
+          "action": "initial_run",
+          "revision_number": 0,
+          "tool_usage": [
+            "generate_regulatory_report"
+          ],
+          "feedback_snippet": null
+        }
+      ]
+    }
+  ],
+  "final_results": {
+    "statistical_summary": {
+      "signal_detected": true,
+      "case_count": 20131,
+      "ror": 85.566,
+      "ror_95ci": [
+        83.613,
+        87.565
+      ],
+      "prr": 30.382,
+      "p_value": 0.0,
+      "chi2_test_valid": true,
+      "data_quality_flags": [],
+      "data_source": "openFDA_live_API"
+    },
+    "clinical_classification": "PLAUSIBLE",
+    "risk_level": "HIGH",
+    "approval_status": "approved",
+    "quality_scores": {
+      "alignment_score": 100,
+      "completeness_score": 100,
+      "risk_alignment_score": 100,
+      "actionability_score": 100,
+      "overall_score": 100
+    },
+    "feedback_loop": {
+      "iterations_used": 1,
+      "final_quality_score": 100.0,
+      "converged": true,
+      "stop_reason": "quality_threshold_met",
+      "max_iterations": 3,
+      "quality_threshold": 95.0
+    }
+  },
+  "status": "completed",
+  "summary": {
+    "total_events": 12,
+    "total_iterations": 1,
+    "total_agent_executions": 3,
+    "total_revisions": 0,
+    "agents_revised": [],
+    "quality_score_progression": [
+      {
+        "iteration": 1,
+        "score": 100
+      }
+    ],
+    "errors_encountered": 0
+  }
+}
