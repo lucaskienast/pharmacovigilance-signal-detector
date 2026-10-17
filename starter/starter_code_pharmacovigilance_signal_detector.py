@@ -401,6 +401,37 @@ def get_feedback_for_agent(
 # 5. FEEDBACK-DRIVEN RE-RUNNING  (TODO 3)
 # =============================================================================
 
+# Which key in current_results holds each agent's latest result.
+AGENT_RESULT_KEYS = {
+    "statistical": "statistical_analysis",
+    "clinical": "clinical_assessment",
+    "regulatory": "regulatory_report",
+}
+
+
+def _as_json_str(data: Any) -> str:
+    """Tools take JSON strings; accept either a JSON string or a dict."""
+    if isinstance(data, str):
+        return data
+    return json.dumps(data if data is not None else {})
+
+
+def _statistical_json(stat_result: Dict[str, Any]) -> str:
+    """Raw FAERS stats JSON (calculate_drug_event_statistics output) from a statistical result."""
+    raw = stat_result.get("raw_data")
+    if isinstance(raw, dict) and "statistics_json" in raw:
+        raw = raw["statistics_json"]
+    return _as_json_str(raw)
+
+
+def _clinical_combined_json(clinical_result: Dict[str, Any]) -> str:
+    """Combined clinical JSON (literature + plausibility + narrative) used by QC and regulatory."""
+    raw = clinical_result.get("raw_data")
+    if isinstance(raw, dict) and "combined_for_qc" in raw:
+        raw = raw["combined_for_qc"]
+    return _as_json_str(raw)
+
+
 def rerun_agent_with_feedback(
     llm: ChatOpenAI,
     agent_name: str,
@@ -409,6 +440,8 @@ def rerun_agent_with_feedback(
     adverse_event: str,
     literature_evidence: Dict[str, Any],
     current_results: Dict[str, Any],
+    audit: Optional[AuditLogger] = None,
+    feedback_loop_summary: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
     TODO 3: Re-run a specific agent, incorporating QC feedback.
@@ -442,8 +475,104 @@ def rerun_agent_with_feedback(
                  using the latest statistical raw_data JSON and clinical combined JSON.
 
       3. Return the revised result dict.
+
+    Extra (optional) arguments:
+      - audit: if given, each re-run is recorded with audit.log_agent_execution(...)
+        (revision_number > 0 plus a feedback snippet). Failures are logged too.
+      - feedback_loop_summary: loop metadata passed to the regulatory report tool.
+
+    If the runner fails (e.g. API/LLM error), the failure is logged and the previous
+    result is returned with status "revision_failed", so the loop does not crash.
     """
-    raise NotImplementedError("Implement rerun_agent_with_feedback()")
+    if agent_name not in AGENT_RESULT_KEYS:
+        raise ValueError(
+            f"Unknown agent '{agent_name}'. Expected one of {sorted(AGENT_RESULT_KEYS)}."
+        )
+
+    # 1) Latest result for this agent -> next revision number
+    previous = current_results.get(AGENT_RESULT_KEYS[agent_name]) or {}
+    new_revision = int(previous.get("revision_number") or 0) + 1
+
+    print(f"  🔁 Re-running {agent_name} agent (revision {new_revision}) with QC feedback...")
+
+    # 2) Call the matching runner with the feedback and the latest upstream results
+    try:
+        if agent_name == "statistical":
+            revised = run_statistical_agent(
+                llm,
+                drug_name,
+                adverse_event,
+                literature_evidence,
+                feedback_context=feedback,
+                revision_number=new_revision,
+            )
+
+        elif agent_name == "clinical":
+            statistical_context = (
+                current_results.get("statistical_analysis", {}).get("agent_response", "")
+            )
+            revised = run_clinical_agent(
+                llm,
+                drug_name,
+                adverse_event,
+                literature_evidence,
+                statistical_context=statistical_context,
+                feedback_context=feedback,
+                revision_number=new_revision,
+            )
+
+        else:  # "regulatory" (tool-based; the report is rebuilt from the latest inputs)
+            revised = run_regulatory_agent(
+                drug_name,
+                adverse_event,
+                statistical_data_json=_statistical_json(
+                    current_results.get("statistical_analysis", {})
+                ),
+                clinical_combined_json=_clinical_combined_json(
+                    current_results.get("clinical_assessment", {})
+                ),
+                literature_evidence=literature_evidence,
+                feedback_loop_summary=feedback_loop_summary,
+                revision_number=new_revision,
+            )
+
+    except Exception as e:
+        print(f"  ⚠️ Re-run of {agent_name} agent failed: {type(e).__name__}: {e}")
+        if audit is not None:
+            audit.log_error(
+                "agent_rerun_failed",
+                f"{type(e).__name__}: {e}",
+                {"agent": agent_name, "attempted_revision": new_revision},
+            )
+            audit.log_agent_execution(
+                agent_name=agent_name,
+                tool_calls=[],
+                success=False,
+                revision_number=new_revision,
+                feedback_context=feedback,
+            )
+        failed = dict(previous)
+        failed["status"] = "revision_failed"
+        failed["revision_error"] = f"{type(e).__name__}: {e}"
+        return failed
+
+    # Make sure the revision metadata is always present on the returned result
+    revised["revision_number"] = new_revision
+    revised["status"] = "revised"
+    if not revised.get("feedback_addressed"):
+        revised["feedback_addressed"] = feedback
+
+    # 3) Audit trail for the re-run
+    if audit is not None:
+        audit.log_agent_execution(
+            agent_name=agent_name,
+            tool_calls=revised.get("tool_usage", []),
+            success=True,
+            revision_number=new_revision,
+            feedback_context=feedback,
+        )
+
+    return revised
 
 
 # =============================================================================
